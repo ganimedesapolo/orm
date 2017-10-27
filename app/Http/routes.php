@@ -18,6 +18,10 @@ Route::get('/', [
     ]);
 
 
+Route::get('all', [
+    'as'=>'all',
+    'uses'=>'QueryController@getAll',
+    ]);
 
 
 
