@@ -31,6 +31,11 @@ Route::get('get/{gender}', [
 
 
 
+Route::get('/get-custom', [
+    'as' => 'get-custom',
+    'uses' => 'QueryController@eloquentGetCustom'
+]);
+
 // Route::get('/create', function () {
 //     $faker = Faker::create();
     
