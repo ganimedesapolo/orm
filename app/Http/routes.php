@@ -12,49 +12,56 @@
 use EloquentORM\User;
 use Faker\Factory as Faker;
  
-
-
-Route::get('/create', function () {
-    $faker = Faker::create();
-    
-    $user = User::create([
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt('123456'),
-        'gender' => $faker->randomElement(['f', 'm']),
-        'biography' => $faker->text(255)
+Route::get('/', [
+    'as'=>'home',
+    'uses'=>'PagesController@Home',
     ]);
-    
-    return $user;
-    
-});
 
 
 
-Route::get('/update/{id}', function ($id) {
-    $faker = Faker::create();
-    $user = User::find($id);
+
+
+// Route::get('/create', function () {
+//     $faker = Faker::create();
     
-    $user->name = $faker->name;
-    $user->gender = $faker->randomElement(['f', 'm']);
-    $user->biography = $faker->text(255);
+//     $user = User::create([
+//         'name' => $faker->name,
+//         'email' => $faker->email,
+//         'password' => bcrypt('123456'),
+//         'gender' => $faker->randomElement(['f', 'm']),
+//         'biography' => $faker->text(255)
+//     ]);
     
-    $user->save();
+//     return $user;
     
-    return $user;
-    
-});
+// });
 
 
 
-Route::get('/read/{id}', function ($id) {
-    $user = user::find($id);
-    return $user;
-});
-
-Route::get('/delete/{id}', function ($id){
-    $user = User::find($id);
-    $user->delete();
+// Route::get('/update/{id}', function ($id) {
+//     $faker = Faker::create();
+//     $user = User::find($id);
     
-    return 'Usuario Eliminado';
-});
+//     $user->name = $faker->name;
+//     $user->gender = $faker->randomElement(['f', 'm']);
+//     $user->biography = $faker->text(255);
+    
+//     $user->save();
+    
+//     return $user;
+    
+// });
+
+
+
+// Route::get('/read/{id}', function ($id) {
+//     $user = user::find($id);
+//     return $user;
+// });
+
+// Route::get('/delete/{id}', function ($id){
+//     $user = User::find($id);
+//     $user->delete();
+    
+//     return 'Usuario Eliminado';
+// });

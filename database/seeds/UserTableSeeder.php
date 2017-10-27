@@ -1,8 +1,6 @@
 <?php
-
 use Illuminate\Database\Seeder;
 use EloquentORM\User;
-
 class UserTableSeeder extends Seeder
 {
     /**
@@ -12,6 +10,11 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class,100)->create();
+        factory(User::class)->create([
+            'name' => 'Lynda Morales',
+            'gender' => 'f'
+        ]);
+        
+        factory(User::class, 99)->create();
     }
 }
