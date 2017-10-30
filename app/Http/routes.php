@@ -36,6 +36,12 @@ Route::get('/get-custom', [
     'uses' => 'QueryController@eloquentGetCustom'
 ]);
 
+
+Route::delete('/delete/{id}', [
+    'as' => 'delete',
+    'uses' => 'QueryController@eloquentDelete'
+]);
+
 // Route::get('/create', function () {
 //     $faker = Faker::create();
     

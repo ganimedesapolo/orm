@@ -25,15 +25,20 @@ class QueryController extends Controller
     }
 
 
-    
-
-
-
         public function eloquentGetCustom(){
          $users = User::where('gender', 'f')
                 ->get(['id', 'name', 'biography']);
         $title = "Lista de usuarios (GET Custom - con Array)";
         return view('query.methods', compact('title', 'users'));
     }
+
+
+       public function eloquentDelete($id){
+         $user = User::find($id);
+         $user->delete();
+         return view('pages.delete');
+    }
+
+
 
 }
