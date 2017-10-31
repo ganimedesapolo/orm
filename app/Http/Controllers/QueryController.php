@@ -40,5 +40,12 @@ class QueryController extends Controller
     }
 
 
+        public function eloquentLists(){
+         $users = User::orderBy('name','ASC')
+                ->lists('name','id');
+         return view('query.lists',compact('users'));
+    }
+
+
 
 }
