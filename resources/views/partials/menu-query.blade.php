@@ -34,5 +34,10 @@
                                    Fisrt Last
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('paginate') }}">
+                                   Paginate
+                                </a>
+                            </li>
                         </ul>
  </li>

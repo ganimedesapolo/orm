@@ -59,4 +59,11 @@ class QueryController extends Controller
 
 
 
+ public function eloquentPaginate(){
+        $users = User::orderBy('id', 'DESC')
+                ->paginate();
+        
+        return view('query.paginate', compact('users'));
+    }
+
 }
